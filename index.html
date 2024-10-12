@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes rainbow-background {
+            0% { background-color: #FF5733; }
+            14% { background-color: #FFBD33; }
+            28% { background-color: #DBFF33; }
+            42% { background-color: #75FF33; }
+            57% { background-color: #33FF57; }
+            71% { background-color: #33FFBD; }
+            85% { background-color: #3375FF; }
+            100% { background-color: #FF5733; }
+        }
+
+        body {
+            animation: rainbow-background 10s ease infinite;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+        }
+    </style>
+    <title>QR Code Generator | Code Traversal</title>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="overlay p-6 w-full max-w-md rounded-lg">
+        <h1 class="text-2xl text-white text-center mb-6 uppercase">Generate QR Code</h1>
+        <input type="text" placeholder="Type your text or URL" id="qr-text" class="w-full p-2 mb-4 border-2 border-[#7fb7c9] rounded-lg" />
+        <div class="mb-4">
+            <label for="sizes" class="text-white text-lg">Select Size:</label>
+            <select id="sizes" class="w-full p-2 border-2 border-[#7fb7c9] rounded-lg">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+        </div>
+        <div class="qr-body grid place-items-center mb-4"></div>
+        <div class="flex justify-center">
+            <button id="generateBtn" class="bg-white text-[#155e75] font-semibold py-2 px-6 rounded-lg mr-2">Generate</button>
+            <a id="downloadBtn" download="QR_Code.png" class="bg-white text-[#155e75] font-semibold py-2 px-6 rounded-lg">Download</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</body>
+</html>
+
+
+
+
+
